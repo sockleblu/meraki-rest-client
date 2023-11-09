@@ -1,0 +1,23 @@
+{
+  "mode":"spoke",
+  "hubs":[
+    {
+	"hubId":"N_1234",
+        "useDefaultRoute":true
+    },
+    {
+	"hubId":"N_2345",
+        "useDefaultRoute":false
+    }
+  ],
+  "subnets":[
+    {
+      "localSubnet":"192.168.1.0/24",
+      "useVpn":true
+    },
+    {
+      "localSubnet":"192.168.128.0/24",
+      "useVpn":true
+    }
+  ]
+}

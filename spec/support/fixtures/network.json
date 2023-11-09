@@ -1,0 +1,8 @@
+{
+  "id":"N_1234",
+  "organizationId":"1234",
+  "type": "wireless",
+  "name":"My network",
+  "timeZone": "US/Pacific",
+  "tags": " tag1 tag2 "
+}

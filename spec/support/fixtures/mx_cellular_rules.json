@@ -1,0 +1,32 @@
+[
+  {
+     "comment": "Allow tcp traffic to subnet with http servers.",
+     "policy": "allow",
+     "protocol": "tcp",
+     "destPort": "80,443",
+     "destCidr": "10.1.33.0/24",
+     "srcPort": "Any",
+     "srcCidr": "Any",
+     "syslogEnabled": false
+  },
+  {
+     "comment": "Block all tcp to http/https ports.",
+     "policy": "deny",
+     "protocol": "http",
+     "destPort": "80,443",
+     "destCidr": "10.1.1.0/24,10.1.2.0/24",
+     "srcPort": "Any",
+     "srcCidr": "Any",
+     "syslogEnabled": false
+  },
+  {
+     "comment": "Default rule",
+     "policy": "allow",
+     "protocol": "Any",
+     "destPort": "Any",
+     "destCidr": "Any",
+     "srcPort": "Any",
+     "srcCidr": "Any",
+     "syslogEnabled": false
+  }
+]

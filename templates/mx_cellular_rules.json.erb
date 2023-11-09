@@ -1,0 +1,154 @@
+{
+    "rules": [
+        {
+            "comment": "Cellular Backup - Permit Management Traffic",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.50.254.0\/28",
+            "destPort": "Any",
+            "destCidr": "Any",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - Permit POS and SIP Traffic",
+            "policy": "allow",
+            "protocol": "any",
+            "srcPort": "Any",
+            "srcCidr": "10.<%= @oct2 %>.<%= @oct3 %>.0\/24",
+            "destPort": "Any",
+            "destCidr": "Any",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "CHEnv to Store_LAN for DNS",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "53",
+            "destCidr": "10.<%= @oct2 %>.<%= @oct3 %>.0\/26",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to pos1.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "990",
+            "destCidr": "198.22.206.246\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to pos1.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "64000-64500",
+            "destCidr": "198.22.206.246\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to pos41.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "990",
+            "destCidr": "205.237.109.24\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to pos41.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "64000-64500",
+            "destCidr": "205.237.109.24\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to ms01.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "443",
+            "destCidr": "198.22.206.230\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to ms02.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "443",
+            "destCidr": "209.236.103.70\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to Stmt1.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "443",
+            "destCidr": "198.22.206.252\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - CHEnv to Stmt2.auruspay.com",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "443",
+            "destCidr": "205.237.109.24\/32",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "CHEnv to Store_LAN for Auruspay",
+            "policy": "allow",
+            "protocol": "tcp",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "9701-9799",
+            "destCidr": "10.<%= @oct2 %>.<%= @oct3 %>.0\/26",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - Explicit deny all other outbound traffic from CHEnv",
+            "policy": "deny",
+            "protocol": "any",
+            "srcPort": "Any",
+            "srcCidr": "10.0.12.0\/28",
+            "destPort": "Any",
+            "destCidr": "Any",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Cellular Backup - Deny all other traffic",
+            "policy": "deny",
+            "protocol": "any",
+            "srcPort": "Any",
+            "srcCidr": "Any",
+            "destPort": "Any",
+            "destCidr": "Any",
+            "syslogEnabled": false
+        },
+        {
+            "comment": "Default rule",
+            "policy": "allow",
+            "protocol": "Any",
+            "srcPort": "Any",
+            "srcCidr": "Any",
+            "destPort": "Any",
+            "destCidr": "Any",
+            "syslogEnabled": false
+        }
+    ]
+}

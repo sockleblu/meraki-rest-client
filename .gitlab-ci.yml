@@ -1,0 +1,50 @@
+before_script:
+  - export VERSION=$(grep 'VERSION =' lib/version.rb | grep -oE '[^ ]+$' | tr -d "'")
+  
+stages:
+ - lint
+ - build
+# - deliver
+
+rubocop:
+  stage: lint
+  tags:
+    - lynn
+    - linux
+  script:
+    - rubocop -a
+    - rubocop
+
+build_gem:
+  stage: build
+  tags:
+    - lynn
+    - linux
+  script:
+    - gem build $CI_PROJECT_NAME.gemspec
+    - gem inabox $CI_PROJECT_NAME-$VERSION.gem -g http://rubygems.zumiez.com
+  only:
+    changes:
+      - lib/version.rb
+
+#deliver_lynn:
+#  stage: deliver
+#  tags:
+#    - lynn
+#    - linux
+#    - ubuntu
+#  script: 
+#    - gem inabox $CI_PROJECT_NAME*.gem -g http://rubygems.zumiez.com
+#  only:
+#    changes:
+#      - lib/version.rb
+
+#deliver_dfw:
+#  stage: deploy
+#  tags:
+#    - dfw
+#    - linux
+#    - ubuntu
+#  script:
+#    - berks install
+#    - berks upload

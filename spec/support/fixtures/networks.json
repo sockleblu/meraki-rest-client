@@ -1,0 +1,15 @@
+[
+  { "id":"N_1234",
+    "organizationId":1234,
+    "name":"My network", 
+    "tags":"tag1 tag2"
+  },
+  {
+    "id":"N_1234",
+    "organizationId":"1234",
+    "type": "wireless",
+    "name":"My network",
+    "timeZone": "US/Pacific",
+    "tags": null
+  }
+]

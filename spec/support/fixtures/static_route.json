@@ -1,0 +1,7 @@
+{
+  "id": "10",
+  "networkId": "N_1234",
+  "name": "VOIP",
+  "gatewayIp": "10.8.0.5",
+  "subnet": "192.168.10.0/24"
+}

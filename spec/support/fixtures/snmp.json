@@ -1,0 +1,8 @@
+{
+  "v2cEnabled":false,
+  "v3Enabled":false,
+  "v3AuthMode":null,
+  "v3PrivMode":null,
+  "hostname":"n1.meraki.com",
+  "port":16100
+}

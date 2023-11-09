@@ -1,0 +1,15 @@
+{
+  "number":0,
+  "name":"SSID-1",
+  "enabled":true,
+  "authMode":"psk",
+  "encryptionMode":"wpa",
+  "psk":"abcd1234",
+  "splashPage":"Click-through splash page",
+  "perClientBandwidthLimitUp":0,
+  "perClientBandwidthLimitDown":0,
+  "ssidAdminAccessible":false,
+  "ipAssignmentMode":"NAT mode",
+  "walledGardenEnabled":true,
+  "walledGardenRanges":"192.168.1.1/24 192.168.37.10/32"
+}

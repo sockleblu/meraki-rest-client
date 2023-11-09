@@ -1,0 +1,16 @@
+{
+    "rules":
+    [
+	{
+	    "comment": "a note about the rule",
+	    "policy": "deny",
+	    "protocol": "tcp",
+	    "destPort": "80,443",
+	    "destCidr": "192.168.1.0/24,192.168.2.0/24",
+	    "srcPort": "any",
+	    "srcCidr": "any",
+	    "syslogEnabled": true
+	}
+    ],
+    "syslogDefaultRule": true
+}
